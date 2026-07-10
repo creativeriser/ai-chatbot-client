@@ -1,10 +1,18 @@
-import ChatWidget from "./components/ChatWidget.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./components/layout/MainLayout.jsx";
+import LandingPage from "./components/marketing/LandingPage.jsx";
+import ChatInterface from "./components/chat/ChatInterface.jsx";
 
 function App() {
   return (
-    <div className="app">
-      <ChatWidget />
-    </div>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/chat" element={<ChatInterface />} />
+        </Routes>
+      </MainLayout>
+    </BrowserRouter>
   );
 }
 
